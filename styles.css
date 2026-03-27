@@ -141,6 +141,7 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   gap: 18px;
+  flex-wrap: wrap;
 }
 
 .nav-links {
@@ -313,6 +314,12 @@ a { color: inherit; }
 
 .reservio-button-container {
   display: inline-flex;
+}
+
+.reservio-button-container iframe,
+.reservio-button-container a,
+.reservio-button-container button {
+  max-width: 100%;
 }
 
 .social-links {
@@ -491,6 +498,7 @@ h3 {
   justify-content: space-between;
   gap: 16px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer p { margin: 0; }
@@ -560,6 +568,46 @@ h3 {
     align-items: flex-start;
   }
 
+  .topbar,
+  .nav-tools,
+  .nav-links {
+    width: 100%;
+  }
+
+  .nav-tools {
+    gap: 14px;
+  }
+
+  .nav-links {
+    gap: 10px 12px;
+  }
+
+  .nav-links a {
+    padding: 8px 0;
+  }
+
+  .theme-toggle {
+    min-height: 46px;
+  }
+
+  .contact-actions,
+  .social-links,
+  .footer-socials {
+    width: 100%;
+  }
+
+  .contact-card {
+    gap: 6px;
+  }
+
+  .map-card {
+    min-height: 320px;
+  }
+
+  #map {
+    min-height: 304px;
+  }
+
   h1,
   .page-title {
     max-width: 100%;
@@ -588,8 +636,59 @@ h3 {
     padding: 20px;
   }
 
+  .topbar {
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .brand {
+    font-size: 1.6rem;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 14px;
+  }
+
+  .nav-links a {
+    font-size: 0.92rem;
+  }
+
   .button,
   .theme-toggle {
+    width: 100%;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .social-links {
+    gap: 8px;
+  }
+
+  .social-links a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .map-card {
+    min-height: 260px;
+    padding: 6px;
+  }
+
+  #map {
+    min-height: 248px;
+    border-radius: 16px;
+  }
+
+  .footer {
+    gap: 12px;
+  }
+
+  .footer p {
     width: 100%;
   }
 
@@ -597,6 +696,17 @@ h3 {
   .reveal.is-visible {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 980px) {
+  .page-shell {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  .contact-actions .button,
+  .contact-actions .reservio-button-container {
+    min-width: 220px;
   }
 }
 
